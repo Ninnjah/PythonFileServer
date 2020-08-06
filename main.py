@@ -84,7 +84,7 @@ if __name__ == '__main__':
     temp = json_read('template/{}.json'.format('example'))
     
     str_input = input('Enter directories: ')
-    dir_list = str_input.split()
+    dir_list = str_input.split(', ')
 
     for i in dir_list:
         try:
