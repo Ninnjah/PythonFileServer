@@ -1,8 +1,9 @@
 # PythonFileServer
 ![banner](https://github.com/Ninnjah/PythonFileServer/blob/master/screen.png)
+
 File WebServer on python, just like FTP but HTTP
 
-##Usage
+## Usage
 ```python
     Enter directories: directory_one, sample, folder of four words
 ```
