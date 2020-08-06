@@ -80,10 +80,16 @@ def start_server(dir_list):
     httpd.serve_forever()
 
 if __name__ == '__main__':
-    dir_list = ['test']
 
     temp = json_read('template/{}.json'.format('example'))
+    
+    str_input = input('Enter directories: ')
+    dir_list = str_input.split()
 
     for i in dir_list:
-        list_dir(i, '')
+        try:
+            list_dir(i, '')
+        except:
+            pass
+    
     start_server(dir_list)
