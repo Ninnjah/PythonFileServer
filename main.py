@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from http.server import HTTPServer, CGIHTTPRequestHandler
 
 ## Чтение JSON
@@ -7,6 +8,13 @@ def json_read(file):
         with open(file, "r", encoding='utf-8') as read_file:
             data = json.load(read_file)
         return data
+
+def json_list(list_):
+    string = ''
+    for i in list_:
+        #i = i.maketrans('    ', '"[],')
+        string = string + i + '\n'
+    return string
 
 ## Вывод папки
 def list_dir(dir_, rel_path):
@@ -19,12 +27,12 @@ def list_dir(dir_, rel_path):
     f.write('''
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
 {head}
-    </head>
-    <body>
+</head>
+<body>
 {body}
-'''.format(head=temp.get('json_head'), body=temp.get('json_body_start')))
+'''.format(head=json_list(temp.get('json_head')), body=json_list(temp.get('json_body_start'))))
 
     f.write('<p><a id="parrent" href="{}">{}..</a><p>'.format(os.path.join('/' + rel_path, 'index.html'), rel_path))
 
@@ -51,7 +59,8 @@ def list_dir(dir_, rel_path):
             # Запускаем проверку папки
             list_dir(i, rel_path)
     # Перемещаемся обратно
-    f.write('''</body>
+    f.write('''
+</body>
 </html>''')
     os.chdir('..')
 
@@ -61,12 +70,12 @@ def start_server(dir_list):
     html.write('''
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
 {head}
-    </head>
-    <body>
+</head>
+<body>
 {body}
-'''.format(head=temp.get('json_head'), body=temp.get('json_body_start')))
+'''.format(head=json_list(temp.get('json_head')), body=json_list(temp.get('json_body_start'))))
     for i in dir_list:
         html.write('{start}<a href="{link}">{link}</a>{end}'.format(
             link=i, start=temp.get('json_row_start'), 

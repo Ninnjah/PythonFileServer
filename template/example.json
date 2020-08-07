@@ -1,7 +1,18 @@
 {
-    "json_head" : "<meta charset='utf-8'>\n<title>PFS</title>\n<style>\n  body{background-color: black;font-family: 'Courier New', Courier, monospace;text-decoration: none;color: #00ff00;}\n  .container{padding: 8pt;}\n  .inner{margin: 4pt; padding: 8px; background: #202020; border-radius: 8pt;}\n  a{text-decoration: none; color: #00ff00}\n  #file{text-decoration: underline}\n  #parrent{color: #00cc00; background-color: #505050; padding: 2pt;}</style>",
-    "json_body_start" : "<div class='container'>\n<h1>PFS</h1>\n<div class='inner'>",
-    "json_body_end" : "</div>\n</div>",
-    "json_row_start" : "<p>",
+    "json_head" : [
+        "   <meta charset='utf-8'>", 
+        "   <title>PFS</title>", 
+        "   <style>",  
+        "      body{background-color: black;font-family: 'Courier New', Courier, monospace;text-decoration: none;color: #00ff00;}",
+        "      .container{padding: 8pt;}",  
+        "      .inner{margin: 4pt; padding: 8px; background: #202020; border-radius: 8pt;}",  
+        "      a{text-decoration: none; color: #00ff00}",  
+        "      #file{text-decoration: underline}",  
+        "      #parrent{color: #00cc00; background-color: #505050; padding: 2pt;}",
+        "   </style>"
+    ],
+    "json_body_start" : ["  <div class='container'>", "    <h1>PFS</h1>", "    <div class='inner'>"],
+    "json_body_end" : "\n    </div>\n  </div>\n",
+    "json_row_start" : "      <p>",
     "json_row_end" : "</p>"
 }
